@@ -1,0 +1,1 @@
+<?php return array('time'=>1638031320,'count_admins'=>4,'count_bans'=>'3216','count_comms'=>'74');

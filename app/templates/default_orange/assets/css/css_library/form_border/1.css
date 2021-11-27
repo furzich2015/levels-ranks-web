@@ -1,0 +1,14 @@
+.badge {
+    border: 1px solid #FAA800;
+    border-radius: 25px;
+}
+
+.card {
+    border: 1px solid #FAA800;
+    border-radius: 25px;
+}
+
+.tooltip-left:after, .tooltip-right:after, .tooltip-top:after {
+    border: 1px solid #FAA800;
+    border-radius: 25px;
+}

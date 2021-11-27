@@ -1,0 +1,30 @@
+[
+    {
+        "players": [],
+        "ip": "185.41.249.91:27001",
+        "HostName": "EZSKILL.GG|-[DM-FFA][AIM][MIRAGE]✪128TR-|#1",
+        "Map": "de_mirage",
+        "Map_image": "de_mirage",
+        "Players": 0,
+        "MaxPlayers": 14,
+        "Mod": 730
+    },
+    {
+        "players": [
+            {
+                "Id": 0,
+                "Name": "",
+                "Frags": 0,
+                "Time": 86073,
+                "TimeF": "23:54:33"
+            }
+        ],
+        "ip": "185.41.249.91:27002",
+        "HostName": "EZSKILL.GG|-[DM-FFA][AIM][MIRAGE]✪128TR-|#2",
+        "Map": "de_mirage",
+        "Map_image": "de_mirage",
+        "Players": 1,
+        "MaxPlayers": 14,
+        "Mod": 730
+    }
+]

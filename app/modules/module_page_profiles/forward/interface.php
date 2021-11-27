@@ -1,20 +1,20 @@
 <?php
-	/**
-	 * @author Anastasia Sidak <m0st1ce.nastya@gmail.com>
-	 *
-	 * @link https://steamcommunity.com/profiles/76561198038416053
-	 * @link https://github.com/M0st1ce
-	 *
-	 * @license GNU General Public License Version 3
-	 */
-	
-	/*
-	 * In your head, in your head
-	 * Zombie, zombie, zombie
-	 * What's in your head, in your head
-	 * Zombie, zombie, zombie?
-	 */
-	?>
+/**
+ * @author Anastasia Sidak <m0st1ce.nastya@gmail.com>
+ *
+ * @link https://steamcommunity.com/profiles/76561198038416053
+ * @link https://github.com/M0st1ce
+ *
+ * @license GNU General Public License Version 3
+ */
+
+/*
+ * In your head, in your head
+ * Zombie, zombie, zombie
+ * What's in your head, in your head
+ * Zombie, zombie, zombie?
+ */
+?>
 <div class="row">
 	<div class="col-md-12">
 		<div class="header-profile">
@@ -33,84 +33,107 @@
 	</div>
 </div>
 <div class="row">
-	<div class="left-block">
-		<div class="profile__block">
-			<div class="user-block">
-				<div class="block">
-					<?php $General->get_js_relevance_avatar( $Player->get_steam_32(), 1 )?>
-					<a href="<?php $Player->found[  $Player->server_group  ]['steam'] == 1 && print 'https://steamcommunity.com/profiles/' . con_steam32to64( $Player->get_steam_32() )?>" target="_blank"><img id="<?php $General->arr_general['avatars'] == 1 && print con_steam32to64(  $Player->get_steam_32()  )?>"class="rounded-circle avatar" data-src="<?php echo $General->getAvatar( con_steam32to64( $Player->get_steam_32()  ), 1)?>"></a>
-					<div class="name"><?php echo action_text_clear( action_text_trim( $Player->get_name(), 17 ) )?></div>
-					<?php if( $Player->found[ $Player->server_group ]['DB_mod'] != 'RankMeKento' ):?>
-					<img class="rank-img" src="<?php echo $General->arr_general['site'] ?>storage/cache/img/ranks/<?php echo $Player->found[  $Player->server_group  ]['ranks_pack'] . '/' . $Player->get_rank()?>.png">
-					<div class="rank"><?php echo $Translate->get_translate_phrase( $Player->get_rank(), 'ranks_' . $Player->found[  $Player->server_group  ]['ranks_pack'] )?></div>
-					<?php endif?>
-					<div class="country"><?php echo $Player->geo; ?></div>
-					<div class="user-stats" style="background-color:<?php echo $Player->get_profile_status()['color']?>"><?php echo $Player->get_profile_status()['text']?></div>
-				</div>
-			</div>
-			<div class="best-weapon-block">
-				<div class="block">
-					<ul class="weapons">
-						<?php for ( $i = 0; $i < 3; $i++ ):?>
-						<li>
-							<?php $General->get_icon('custom', $Player->top_weapons[ $i ]['name'], 'weapons')?>
-							<div class="kills"><span><?php echo $Player->top_weapons[ $i ]['kills']?></span></div>
-						</li>
-						<?php endfor; ?>
-					</ul>
-					<div class="weapon-table">
-						<table class="table table-hover fixed_header">
-							<thead>
-								<tr>
-									<th class="text-right"></th>
-									<th class="text-left"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Weapon')?></th>
-									<th class="text-center"><?php echo $Translate->get_translate_phrase('_Kills')?></th>
-								</tr>
-							</thead>
-							<tbody>
-								<?php $weapon_names = empty( $Player->weapons ) ? [] : array_keys( $Player->weapons ); for ( $w = 0, $_c = count( $Player->weapons ); $w < $_c; $w++ ) {?>
-								<tr>
-									<th class="text-right"><?php $General->get_icon( 'custom', $weapon_names[ $w ], 'weapons' )?></th>
-									<th class="text-left"><?php echo str_replace( '_', ' ', strtoupper( str_replace( 'weapon_','', $weapon_names[ $w ] ) ) )?></th>
-									<th class="text-center"><?php echo $Player->weapons[ $weapon_names[ $w ] ] ?> kills</th>
-								</tr>
-								<?php } ?>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="profile__block">
-			<div class="short-stats-block">
-				<div class="block" style="padding: 18px;">
-					<div class="left-stats-block">
-						<ul>
-							<li><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Total_winning_percentage')?></li>
-							<li><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Ratio_KD')?></li>
-							<li><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Ratio_SH')?></li>
-							<li><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Game_time')?></li>
-							<li><?php echo $Translate->get_translate_phrase('_Headshot')?>:</li>
-							<li><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Last_connect')?>:</li>
-						</ul>
-					</div>
-					<div class="right-stats-block">
-						<ul>
-							<li><span><?php echo $Player->get_percent_win()?></span></li>
-							<li><span><?php echo $Player->get_kd()?></span></li>
-							<li><span><?php echo $Player->get_percent_hits()?></span></li>
-							<li><span><?php echo $Player->get_playtime()?> <?php echo $Translate->get_translate_phrase('_Hour')?></span></li>
-							<li><span><?php echo $Player->get_percent_headshots()?></span></li>
-							<li><span><?php echo $Player->get_lastconnect()?></span></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="middle-block">
-		<div class="profile__block">
-			<div class="best-maps">
+    <div class="left-block">
+        <div class="profile__block">
+            <div class="user-block">
+                <div class="block">
+                    <?php $General->get_js_relevance_avatar( $Player->get_steam_32(), 1 )?>
+                    <a href="<?php $Player->found[  $Player->server_group  ]['steam'] == 1 && print 'https://steamcommunity.com/profiles/' . con_steam32to64( $Player->get_steam_32() )?>" target="_blank"><img id="<?php $General->arr_general['avatars'] == 1 && print con_steam32to64(  $Player->get_steam_32()  )?>"class="rounded-circle avatar" data-src="<?php echo $General->getAvatar( con_steam32to64( $Player->get_steam_32()  ), 1)?>"></a>
+                    <div class="name" style="font-weight:bold"><span class="namezero"><?php echo action_text_clear( action_text_trim( $Player->get_name(), 17 ) )?></span></div>
+                    <?php if( $Player->found[ $Player->server_group ]['DB_mod'] != 'RankMeKento' ):?>
+                        <div>
+                            <b style="font-size: 12px; color: #fff;">Последняя игра</b>
+                            <br>
+                            <b style="font-size: 11px; color: #fff;"><?php echo $Player->get_lastconnect()?></b> </div>
+                        <img class="rank-img" src="<?php echo $General->arr_general['site'] ?>storage/cache/img/ranks/<?php echo $Player->found[  $Player->server_group  ]['ranks_pack'] . '/' . $Player->get_rank()?>.png">
+                        <div class="rank"><?php echo $Translate->get_translate_phrase( $Player->get_rank(), 'ranks_' . $Player->found[  $Player->server_group  ]['ranks_pack'] )?></div>
+                    <?php endif?>
+                    <div class="user-stats" style="background-color:<?php echo $Player->get_profile_status()['color']?>"><?php echo $Player->get_profile_status()['text']?></div>
+                </div>
+            </div>
+            <div class="best-weapon-block">
+                <div class="block">
+                    <ul class="weapons">
+                        <?php for ( $i = 0; $i < 3; $i++ ):?>
+                            <li>
+                                <?php $General->get_icon('custom', $Player->top_weapons[ $i ]['name'], 'weapons')?>
+                                <div class="kills"><span><?php echo $Player->top_weapons[ $i ]['kills']?></span></div>
+                            </li>
+                        <?php endfor; ?>
+                    </ul>
+                    <div class="weapon-table">
+                        <table class="table table-hover fixed_header">
+                            <thead>
+                            <tr>
+                                <th class="text-right"></th>
+                                <th class="text-left"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Weapon')?></th>
+                                <th class="text-center"><?php echo $Translate->get_translate_phrase('_Kills')?></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php $weapon_names = empty( $Player->weapons ) ? [] : array_keys( $Player->weapons ); for ( $w = 0, $_c = count( $Player->weapons ); $w < $_c; $w++ ) {?>
+                                <tr>
+                                    <th class="text-right"><?php $General->get_icon( 'custom', $weapon_names[ $w ], 'weapons' )?></th>
+                                    <th class="text-left"><?php echo str_replace( '_', ' ', strtoupper( str_replace( 'weapon_','', $weapon_names[ $w ] ) ) )?></th>
+                                    <th class="text-center"><?php echo $Player->weapons[ $weapon_names[ $w ] ] ?> kills</th>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile__block">
+            <div class="short-stats-block">
+                <div class="block">
+                    <div class="left-stats-block">
+                        <ul>
+                        	<li>STEAMID игрока:</li>
+                            <li><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Game_time')?></li><br>
+                            <li>Убийства:</li>
+                            <li>Смертей:</li>
+                            <li>Ассистов:</li>
+                            <li><?php echo $Translate->get_translate_phrase('_Headshot')?>:</li>
+                            <li><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Ratio_KD')?></li><br>
+                            <li><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Ratio_SH')?></li>   
+                            <li><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Total_winning_percentage')?></li>
+                        </ul>
+                    </div>
+                    <div class="right-stats-block">
+                        <ul>
+                        	<li><span style="font-weight:bold"><font color="#00ff08"><?php echo $Player->get_steam_32();?></span></li>
+                            <li><span style="font-weight:bold"><?php echo $Player->get_playtime()?> <?php echo $Translate->get_translate_phrase('_Hour')?></span></font></li><br>
+                            <li><span style="font-weight:bold"><?php echo $Player->get_kills()?></span></li>
+                            <li><span style="font-weight:bold"><?php echo $Player->get_deaths()?></span></li>
+                            <li><span style="font-weight:bold"><?php echo $Player->get_assists()?></span></li>
+                            <li><span style="font-weight:bold"><?php echo $Player->get_percent_headshots()?></span></li>
+                            <li><span style="font-weight:bold"><?php echo $Player->get_kd()?></span></li><br>
+                            <li><span style="font-weight:bold"><?php echo $Player->get_percent_hits()?></span></li>
+                            <li><span style="font-weight:bold"><?php echo $Player->get_percent_win()?></span></li>
+                        </ul>
+                    </div>
+                    <div class="skull-block">
+                        <div class="left-skull-block">
+                            <div class="skull"></div>
+                            <div class="info"></span></div>
+                        </div>
+                        <div class="center-skull-block">
+                            <div class="skull"></div>
+                            <div class="info"></span></div>
+                        </div>
+                        <div class="right-skull-block">
+                            <div class="skull"></div>
+                            <div class="info"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-block">
+        <div class="profile__block">
+            <div class="best-maps">
 				<div class="block">
 					<div class="map-top">
 						<img src="<?php echo $General->arr_general['site'] ?>storage/cache/img/maps/<?php echo $Player->found[ $Player->server_group ]['mod'] . '/' . array_keys( $Player->maps )[0]; ?>.jpg">
@@ -144,7 +167,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="hitstats-block">
+            <div class="hitstats-block">
 				<div class="block">
 					<img class="back" ondrag="return false" ondragstart="return false" src="<?php echo $General->arr_general['site'] . CACHE . 'img/hitstats/back' ?>.jpg">
 					<div class="hit_player">
@@ -159,28 +182,94 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<?php if( !empty($Player->unusualkills) ): ?> 
-		<div class="profile__block">
-			<?php $uk_names = empty($Player->unusualkills) ? [] : array_keys($Player->unusualkills); 
-				for($u = 0, $left_c = 0, $_c = sizeof( $Player->unusualkills ); 
-				$u != $_c; $u++, $left_c--): 
-				    if( $Player->unusualkills[$uk_names[$u]] != 0 ): ?>
-			<div class="unusualkills_block<?php if(!$left_c): echo '_left'; $left_c = 3; endif; ?>">
-				<div class="block">
-					<div class="unusualkills_score"><?php echo $Player->unusualkills[$uk_names[$u]]; ?></div>
-					<div class="unusualkills_text"><?php echo $Translate->get_translate_module_phrase('module_page_profiles', $Player->msettings[$uk_names[$u]]['phrase']); ?></div>
-					<div class="unusualkills_percent"><?php echo round($Player->unusualkills[$uk_names[$u]] / $Player->get_kills() * 100.0, 2); ?>%</div>
-					<div class="icon_block">
-						<i class="zmdi zmdi-<?php echo $Player->msettings[$uk_names[$u]]['icon']; ?> zmdi-hc-fw"></i>
-					</div>
-				</div>
-			</div>
-			<?php endif; endfor; ?> 
-		</div>
-	<?php endif; ?> 
+        </div>
+        <?php if( $Player->unusualkills != false ):?>
+            <div class="profile__block">
+                <div class="unusualkills_block_left">
+                    <div class="block">
+                        <div class="unusualkills_score"><?php echo $Player->get_unusualkills_op()?></div>
+                        <div class="unusualkills_text"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_First_round_kills')?></div>
+                        <div class="icon_block">
+                            <i class="zmdi zmdi-fire zmdi-hc-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="unusualkills_block">
+                    <div class="block">
+                        <div class="unusualkills_score"><?php echo $Player->get_unusualkills_penetrated()?></div>
+                        <div class="unusualkills_text"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Penetrated_kills')?></div>
+                        <div class="icon_block">
+                            <i class="zmdi zmdi-format-valign-top zmdi-hc-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="unusualkills_block">
+                    <div class="block">
+                        <div class="unusualkills_score"><?php echo $Player->get_unusualkills_noscope()?></div>
+                        <div class="unusualkills_text"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Killing_without_scope')?></div>
+                        <div class="icon_block">
+                            <i class="zmdi zmdi-circle-o zmdi-hc-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="unusualkills_block_left">
+                    <div class="block">
+                        <div class="unusualkills_score"><?php echo $Player->get_unusualkills_run()?></div>
+                        <div class="unusualkills_text"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Kills_on_run')?></div>
+                        <div class="icon_block">
+                            <i class="zmdi zmdi-run zmdi-hc-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="unusualkills_block">
+                    <div class="block">
+                        <div class="unusualkills_score"><?php echo $Player->get_unusualkills_flash()?></div>
+                        <div class="unusualkills_text"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Kills_flash')?></div>
+                        <div class="icon_block">
+                            <i class="zmdi zmdi-eye-off zmdi-hc-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="unusualkills_block">
+                    <div class="block">
+                        <div class="unusualkills_score"><?php echo $Player->get_unusualkills_jump()?></div>
+                        <div class="unusualkills_text"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Jump_kills')?></div>
+                        <div class="icon_block">
+                            <i class="zmdi zmdi-star-outline zmdi-hc-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="unusualkills_block_left">
+                    <div class="block">
+                        <div class="unusualkills_score"><?php echo $Player->get_unusualkills_smoke()?></div>
+                        <div class="unusualkills_text"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Smoke_kills')?></div>
+                        <div class="icon_block">
+                            <i class="zmdi zmdi-mood-bad zmdi-hc-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="unusualkills_block">
+                    <div class="block">
+                        <div class="unusualkills_score"><?php echo $Player->get_unusualkills_whirl()?></div>
+                        <div class="unusualkills_text"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Kills_whirl')?></div>
+                        <div class="icon_block">
+                            <i class="zmdi zmdi-replay zmdi-hc-fw"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="unusualkills_block">
+                    <div class="block">
+                        <div class="unusualkills_score"><?php echo $Player->get_unusualkills_last_clip()?></div>
+                        <div class="unusualkills_text"><?php echo $Translate->get_translate_module_phrase( 'module_page_profiles','_Kills_last_shoot')?></div>
+                        <div class="icon_block">
+                            <i class="zmdi zmdi-repeat-one zmdi-hc-fw"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif;?>
     </div>
-	<div class="right-block">
+    <div class="right-block">
 		<div class="profile__block">
 			<div class="top">
 				<div class="block">

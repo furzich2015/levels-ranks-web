@@ -17,7 +17,7 @@ ini_set('display_errors', 0);
 ini_set('display_startup_errors', 0);
 
 // Ограничиваем время выполнения скрипта.
-set_time_limit(4);
+set_time_limit(5);
 
 // Нахожение в пространстве LR.
 define('IN_LR', true);

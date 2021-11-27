@@ -28,6 +28,13 @@
     width: calc(100% + 35px)
 }
 
+.card {
+    -moz-box-shadow: 0px 0px 14px #e5caca; 
+    -webkit-box-shadow: 0px 0px 14px #e5caca; 
+    box-shadow: 0px 0px 14px #12c2c4; 
+    margin: 15px; 
+}
+
 .custom-server .data-basic {
     position: absolute;
     top: 19px;

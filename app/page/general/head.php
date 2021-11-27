@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="<?php echo $Modules->get_page_description()?>">
     <meta property="og:description" content="<?php echo $Modules->get_page_description()?>">
-    <meta name="author" content="https//vk.com/M0st1ce">
+    <meta name="author" content="https://vk.com/ezskillgg">
     <link rel="icon" href="<?php echo $General->arr_general['site'] ?>/favicon.ico" type="image/x-icon">
     <title><?php echo $Modules->get_page_title()?></title>
     <meta property="og:title" content="<?php echo $Modules->get_page_title()?>">

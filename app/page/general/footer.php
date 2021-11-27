@@ -1,4 +1,4 @@
-<footer class="footer"><?php echo date("Y") ?> &copy; <a href="https://github.com/levelsranks/levels-ranks-web" target="_blank">Levels Ranks - Web Interface</a> #<?php echo VERSION?> by <a href="https://steamcommunity.com/id/M0st1ce/" target="_blank">M0st1ce</a></footer></div></div>
+<footer class="footer"><?php echo date("Y") ?> &copy; <a href="https://github.com/levelsranks/levels-ranks-web" target="_blank">EZSKILL WEB</a> #<?php echo VERSION?> by <a href="https://steamcommunity.com/id/!!!СЫЛКА /" target="_blank">EZSKILL</a></footer></div></div>
     <script src="<?php echo $General->arr_general['site'] ?>/storage/assets/js/vendors/jquery/jquery-3.5.1.min.js"></script>
     <script src="<?php echo $General->arr_general['site'] ?>/storage/assets/js/vendors/jquery/jquery-ui.min.js"></script>
     <script>let domain = '<?php echo $General->arr_general['site'] ?>';</script>
