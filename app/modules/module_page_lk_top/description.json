@@ -1,8 +1,8 @@
 {
-  "title": "LR WEB - lk_top - Топ донатеров",
-  "info": "Добавляет страницу с донатевшими игроками",
+  "title": "LR WEB | TOP Points - Player Stats",
+  "info": "Adds a page with player statistics",
   "author": "M0st1ce",
-  "page": "lk_top",
+  "page": "toppoints",
   "version": "0.1",
   "required": {
     "core":"0.2","php":"5.4"
@@ -11,19 +11,18 @@
     "status": 1,
     "type": 1,
     "available_types": "1",
-    "translation": 1,
     "interface": 1,
     "interface_adjacent": "afternavbar",
     "data": 1
   },
   "sidebar": {
     "0": {
-      "href": "?page=lk_top",
+      "href": "?page=toppoints",
       "open_new_tab": "0",
       "icon_group": "zmdi",
       "icon_category": "",
-      "icon": "balance",
-      "name": "Топ донатеров",
+      "icon": "accounts-alt",
+      "name": "_Statistics",
       "sidebar_directory": "_Sidebar_statistics"
     }
   }
